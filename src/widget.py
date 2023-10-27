@@ -1,5 +1,5 @@
 import datetime
-from masks import get_mask_number_card, get_mask_number_bill
+from src.masks import get_mask_number_card, get_mask_number_bill
 
 def get_mask_deposit(deposit: str) -> str:
     """ принимает на вход строку с информацией тип карты/счета и номер карты/счета
