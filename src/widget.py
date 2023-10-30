@@ -1,6 +1,7 @@
 import datetime
 from src.masks import get_mask_number_card, get_mask_number_bill
 
+
 def get_mask_deposit(deposit: str) -> str:
     """ принимает на вход строку с информацией тип карты/счета и номер карты/счета
         возвращает эту строку с замаскированным номером карты/счета.
@@ -38,6 +39,7 @@ def get_date_formatting(str_date: str) -> str:
     """
 
     return datetime.datetime.strptime(str_date, '%Y-%m-%d %H:%M:%S.%f').strftime('%d.%m.%Y')
+
 
 # тестирование функции get_date_formatting()
 print(get_date_formatting('2018-07-11 02:26:18.671407'))
