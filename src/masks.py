@@ -5,7 +5,8 @@ def get_mask_number_card(number: str) -> str:
         :return: замаскированный номер карты
     """
     if len(number) != 16:
-        return 'Некорректный номер. Введите номер снова.'
+        # return 'Некорректный номер. Введите номер снова.'
+        raise ValueError('Некорректный номер. Введите номер снова.')
     return number[:4] + " " + number[4:6] + "**" + " " + "****" + " " + number[-4:]
 
 
@@ -17,5 +18,6 @@ def get_mask_number_bill(number: str) -> str:
     """
 
     if len(number) != 20:
-        return 'Некорректный номер. Введите номер снова.'
+        # return 'Некорректный номер. Введите номер снова.'
+        raise ValueError('Некорректный номер. Введите номер снова.')
     return "**" + number[-4:]
