@@ -21,4 +21,3 @@ def get_list_dictionaries_sorted(list_dictionaries: list, sort_order: bool = Tru
     """
     sorted_dictionaries = sorted(list_dictionaries, key=lambda dictionary: dictionary['date'], reverse=sort_order)
     return sorted_dictionaries
-
