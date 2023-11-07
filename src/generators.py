@@ -1,3 +1,6 @@
+import random
+
+
 def filter_by_currency(transactions_list: list, currency: str):
     """
     Принимает список словарей и возвращает итератор, выдающий по очереди операции с заданной валютой.
@@ -17,6 +20,11 @@ def transaction_descriptions(transaction_list: list):
     """
     for item in transaction_list:
         yield item["description"]
+
+
+# def card_number_generator(start, stop):
+#     while True:
+#         yield random.randrange(start, stop)
 
 
 transactions = (
