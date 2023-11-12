@@ -22,7 +22,7 @@ def log(filename: Optional[str] = None) -> Callable:
     return wrapper
 
 
-@log()
+@log(filename="my_log.txt")
 def my_function(x, y):
     return x + y
 
