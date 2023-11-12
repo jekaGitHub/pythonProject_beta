@@ -1,9 +1,11 @@
 from datetime import datetime
 from typing import Any, Callable, Optional
+from functools import wraps
 
 
 def log(filename: Optional[str] = None) -> Callable:
     def wrapper(func: Callable) -> Callable:
+        @wraps(func)
         def inner(*args: Any, **kwargs: Any) -> Any:
             now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             try:
@@ -27,4 +29,4 @@ def my_function(x, y):
     return x + y
 
 
-print(my_function(2, 2))
+print(my_function(1, "2"))
