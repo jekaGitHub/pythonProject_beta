@@ -21,6 +21,22 @@ def get_list_operations_from_json(datafile: str) -> list:
     return data
 
 
+def get_amount_transaction_in_rub(transaction: dict) -> float:
+    amount = 0.0
+    try:
+        if transaction["operationAmount"]["currency"]["code"] == "RUB":
+            amount = transaction["operationAmount"]["amount"]
+    except ValueError:
+        print("Транзация выполнена не в рублях. Укажите транзакцию в рублях")
+
+    return amount
+
 
 if __name__ == '__main__':
-    print(get_list_operations_from_json("../data/operations.json"))
+    # print(get_list_operations_from_json("../data/operations.json"))
+
+    # проверка функции get_amount_transaction_in_rub
+    transactions = get_list_operations_from_json("../data/operations.json")
+
+    for item in transactions:
+        print(get_amount_transaction_in_rub(item))
