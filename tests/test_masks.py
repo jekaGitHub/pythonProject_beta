@@ -31,5 +31,3 @@ def test_get_mask_number_card_incorrect():
 def test_get_mask_number_bill_incorrect():
     with pytest.raises(ValueError):
         get_mask_number_bill("")
-
-

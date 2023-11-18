@@ -1,6 +1,6 @@
 import pytest
 
-from src.widget import get_mask_deposit, get_date_formatting
+from src.widget import get_mask_deposit
 
 
 @pytest.mark.parametrize("deposit, expected", [("Maestro 1596837868705199", "Maestro 1596 83** **** 5199"),
