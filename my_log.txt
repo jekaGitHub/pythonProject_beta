@@ -7,3 +7,9 @@
 2023-11-12 23:39:56 my_function error: TypeError. Inputs: (1, '2'), {}
 2023-11-12 23:40:17 my_function error: TypeError. Inputs: (1, '2'), {}
 2023-11-12 23:40:40 my_function error: TypeError. Inputs: (1, '2'), {}
+2023-11-18 11:55:15 my_function error: TypeError. Inputs: (1, '2'), {}
+2023-11-18 12:02:36 my_function error: TypeError. Inputs: (1, '2'), {}
+2023-11-18 12:07:01 my_function error: TypeError. Inputs: (1, '2'), {}
+2023-11-18 12:08:34 my_function error: TypeError. Inputs: (1, '2'), {}
+2023-11-18 12:25:32 my_function error: TypeError. Inputs: (1, '2'), {}
+2023-11-18 12:26:09 my_function error: TypeError. Inputs: (1, '2'), {}
