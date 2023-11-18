@@ -22,13 +22,16 @@ def get_list_operations_from_json(datafile: str) -> list:
 
 
 def get_amount_transaction_in_rub(transaction: dict) -> float:
-    amount = 0.0
-    try:
-        if transaction["operationAmount"]["currency"]["code"] == "RUB":
-            amount = transaction["operationAmount"]["amount"]
-    except ValueError:
-        print("Транзация выполнена не в рублях. Укажите транзакцию в рублях")
+    """Принимает на вход одну транзакцию и сумму транзакции в рублях, или ошибку, если не в рублях.
 
+    param: transaction: одна транзакция
+    :return: сумму транзакции или ошибку с сообщением 'Транзация выполнена не в рублях. Укажите транзакцию в рублях'
+    """
+
+    if transaction["operationAmount"]["currency"]["code"] == "RUB":
+        amount = transaction["operationAmount"]["amount"]
+    else:
+        raise ValueError("Транзация выполнена не в рублях. Укажите транзакцию в рублях")
     return amount
 
 
