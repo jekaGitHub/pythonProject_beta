@@ -1,7 +1,7 @@
 from src.logger import setup_logging
 
 
-logger = setup_logging()
+logger = setup_logging("masks.py")
 
 
 def get_mask_number_card(number: str) -> str:

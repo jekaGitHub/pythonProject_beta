@@ -68,7 +68,7 @@ def test_get_amount_transaction_in_rub():
         "description": "Перевод организации",
         "from": "Maestro 1596837868705199",
         "to": "Счет 64686473678894779589"
-    }) == '31957.58'
+    }) == 31957.58
 
 
 def test_get_amount_transaction_not_rub():

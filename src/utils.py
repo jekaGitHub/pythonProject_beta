@@ -3,7 +3,7 @@ import os
 
 from src.logger import setup_logging
 
-logger = setup_logging()
+logger = setup_logging("utils.py")
 
 
 def get_list_operations_from_json(datafile: str) -> list:
@@ -15,7 +15,7 @@ def get_list_operations_from_json(datafile: str) -> list:
     try:
         with open(datafile, encoding='utf-8') as f:
             try:
-                data = json.load(f)
+                data: list = json.load(f)
             except json.JSONDecodeError:
                 print('Ошибка при преобразовании в JSON данных из файла.')
                 logger.error('Ошибка при преобразовании данных в JSON')
