@@ -55,11 +55,21 @@ def get_transactions_from_csv(csv_file: str):
             print(row)
 
 
+def get_transactions_from_xlsx(xlsx_file: str):
+    return pd.read_excel(xlsx_file, index_col=0)
+
+
 if __name__ == '__main__':
-    print(get_list_operations_from_json("../data/operations.json"))
+    # print(get_list_operations_from_json("../data/operations.json"))
+    #
+    # # проверка функции get_amount_transaction_in_rub
+    # transactions = get_list_operations_from_json("../data/operations.json")
+    #
+    # for item in transactions:
+    #     print(get_amount_transaction_in_rub(item))
 
-    # проверка функции get_amount_transaction_in_rub
-    transactions = get_list_operations_from_json("../data/operations.json")
 
-    for item in transactions:
-        print(get_amount_transaction_in_rub(item))
+    # проверка загрузки xlsx файла
+    xlsx_transactions = get_transactions_from_xlsx("../data/transactions_excel.xlsx")
+    print(xlsx_transactions.head())
+    print(xlsx_transactions.shape)
