@@ -1,6 +1,8 @@
 import json
 import os
 
+import pandas as pd
+
 from src.logger import setup_logging
 
 logger = setup_logging("utils.py")
