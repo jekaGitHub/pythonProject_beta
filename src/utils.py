@@ -2,6 +2,7 @@ import json
 import os
 
 from src.logger import setup_logging
+from src.processing import get_transactions_by_str_filter
 
 logger = setup_logging("utils.py")
 
@@ -51,5 +52,6 @@ if __name__ == '__main__':
     # проверка функции get_amount_transaction_in_rub
     transactions = get_list_operations_from_json("../data/operations.json")
 
-    for item in transactions:
-        print(get_amount_transaction_in_rub(item))
+    # print(get_transactions_by_str_filter(transactions, "Открытие вклада"))
+    # for item in transactions:
+    #     print(get_amount_transaction_in_rub(item))
