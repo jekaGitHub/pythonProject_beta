@@ -1,5 +1,6 @@
 import json
 import os
+import csv
 
 import pandas as pd
 
@@ -47,8 +48,15 @@ def get_amount_transaction_in_rub(transaction: dict) -> float:
     return float(amount)
 
 
+def get_transactions_from_csv(csv_file: str):
+    with open(csv_file) as file:
+        reader = csv.DictReader(file, delimiter=';')
+        for row in reader:
+            print(row)
+
+
 if __name__ == '__main__':
-    # print(get_list_operations_from_json("../data/operations.json"))
+    print(get_list_operations_from_json("../data/operations.json"))
 
     # проверка функции get_amount_transaction_in_rub
     transactions = get_list_operations_from_json("../data/operations.json")
