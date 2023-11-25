@@ -25,7 +25,8 @@ def log(filename: Optional[str] = None) -> Callable:
 
 
 @log(filename="my_log.txt")
-def my_function(x, y):
+def my_function(x: int, y: int) -> int:
+    """Функция возвращает сумму двух чисел"""
     return x + y
 
 

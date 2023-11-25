@@ -13,3 +13,4 @@
 2023-11-18 12:08:34 my_function error: TypeError. Inputs: (1, '2'), {}
 2023-11-18 12:25:32 my_function error: TypeError. Inputs: (1, '2'), {}
 2023-11-18 12:26:09 my_function error: TypeError. Inputs: (1, '2'), {}
+2023-11-22 12:24:37 my_function error: TypeError. Inputs: (1, '2'), {}
