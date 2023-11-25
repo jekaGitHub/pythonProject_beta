@@ -46,3 +46,15 @@ def get_transactions_by_str_filter(list_dictionaries: list[dict], str_filter: st
         except KeyError:
             continue
     return list_result
+
+
+def get_categories_and_count_operations(list_dictionaries: list[dict], categories: dict) -> dict:
+    """
+    Функция, которая будет принимать список словарей с данными о банковских операциях и словарь категорий операций
+    и возвращать словарь, в котором ключи — это названия категорий, а значения — это количество операций в каждой
+    категории.
+    :param list_dictionaries: список словарей
+    :param categories: словарь категорий
+    :return: словарь вида {"category": count}
+    """
+    pass
