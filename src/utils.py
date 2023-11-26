@@ -56,7 +56,7 @@ def get_transactions_from_csv(csv_file: str):
 
 
 def get_transactions_from_xlsx(xlsx_file: str):
-    return pd.read_excel(xlsx_file, index_col=0)
+    return pd.read_excel(xlsx_file)
 
 
 if __name__ == '__main__':
