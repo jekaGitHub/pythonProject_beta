@@ -1,5 +1,5 @@
 import re
-
+from collections import Counter
 
 def get_list_dictionary_by_key(list_dictionaries: list[dict], state: str = 'EXECUTED') -> list[dict]:
     """
@@ -57,4 +57,7 @@ def get_categories_and_count_operations(list_dictionaries: list[dict], categorie
     :param categories: словарь категорий
     :return: словарь вида {"category": count}
     """
-    pass
+    counter = Counter(item['description'] for item in list_dictionaries)
+    categories.update(counter)
+
+    return categories
