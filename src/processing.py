@@ -58,7 +58,7 @@ def get_categories_and_count_operations(list_dictionaries: list[dict], categorie
     :param categories: словарь категорий
     :return: словарь вида {"category": count}
     """
-    counter = Counter(item['description'] for item in list_dictionaries)
+    counter = Counter(item.get('description', "") for item in list_dictionaries)
     categories.update(counter)
 
     return categories
