@@ -1,6 +1,7 @@
 import re
 from collections import Counter
 
+
 def get_list_dictionary_by_key(list_dictionaries: list[dict], state: str = 'EXECUTED') -> list[dict]:
     """
     Функция принимает на вход список словарей и значение для ключа "state" и возвращает список,

@@ -55,5 +55,6 @@ if __name__ == '__main__':
     # print(get_transactions_by_str_filter(transactions, "Открытие вклада"))
     # for item in transactions:
     #     print(get_amount_transaction_in_rub(item))
-    categories = {'Перевод организации': 0, 'Перевод с карты на карту': 0, 'Открытие вклада': 0, 'Перевод со счета на счет': 0}
+    categories = {'Перевод организации': 0, 'Перевод с карты на карту': 0, 'Открытие вклада': 0,
+                  'Перевод со счета на счет': 0, 'Перевод с карты на счет': 0}
     print(get_categories_and_count_operations(transactions, categories))
