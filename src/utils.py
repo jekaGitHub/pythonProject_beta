@@ -1,5 +1,8 @@
 import json
 import os
+import csv
+
+import pandas as pd
 
 from src.logger import setup_logging
 from src.processing import get_transactions_by_str_filter, get_categories_and_count_operations
@@ -46,11 +49,25 @@ def get_amount_transaction_in_rub(transaction: dict) -> float:
     return float(amount)
 
 
+def get_transactions_from_csv(csv_file: str):
+    with open(csv_file) as file:
+        reader = csv.DictReader(file, delimiter=';')
+        for row in reader:
+            print(row)
+
+
+def get_transactions_from_xlsx(xlsx_file: str):
+    return pd.read_excel(xlsx_file)
+
+
 if __name__ == '__main__':
     # print(get_list_operations_from_json("../data/operations.json"))
-
-    # проверка функции get_amount_transaction_in_rub
-    transactions = get_list_operations_from_json("../data/operations.json")
+    #
+    # # проверка функции get_amount_transaction_in_rub
+    # transactions = get_list_operations_from_json("../data/operations.json")
+    #
+    # for item in transactions:
+    #     print(get_amount_transaction_in_rub(item))
 
     # print(get_transactions_by_str_filter(transactions, "Открытие вклада"))
     # for item in transactions:
@@ -58,3 +75,8 @@ if __name__ == '__main__':
     categories = {'Перевод организации': 0, 'Перевод с карты на карту': 0, 'Открытие вклада': 0,
                   'Перевод со счета на счет': 0, 'Перевод с карты на счет': 0}
     print(get_categories_and_count_operations(transactions, categories))
+    # проверка загрузки xlsx файла
+    xlsx_transactions = get_transactions_from_xlsx("../data/transactions_excel.xlsx")
+    print(xlsx_transactions.head())
+    print(xlsx_transactions.shape)
+  
