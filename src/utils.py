@@ -5,6 +5,7 @@ import csv
 import pandas as pd
 
 from src.logger import setup_logging
+from src.processing import get_transactions_by_str_filter, get_categories_and_count_operations
 
 logger = setup_logging("utils.py")
 
@@ -44,7 +45,7 @@ def get_amount_transaction_in_rub(transaction: dict) -> float:
         logger.info('Транзакция проверена и получена сумма транзакции в рублях')
     else:
         logger.error("Ошибка! Транзакция не в рублях.")
-        raise ValueError("Транзация выполнена не в рублях. Укажите транзакцию в рублях")
+        raise ValueError("Транзакция выполнена не в рублях. Укажите транзакцию в рублях")
     return float(amount)
 
 
@@ -68,8 +69,14 @@ if __name__ == '__main__':
     # for item in transactions:
     #     print(get_amount_transaction_in_rub(item))
 
-
+    # print(get_transactions_by_str_filter(transactions, "Открытие вклада"))
+    # for item in transactions:
+    #     print(get_amount_transaction_in_rub(item))
+    categories = {'Перевод организации': 0, 'Перевод с карты на карту': 0, 'Открытие вклада': 0,
+                  'Перевод со счета на счет': 0, 'Перевод с карты на счет': 0}
+    print(get_categories_and_count_operations(transactions, categories))
     # проверка загрузки xlsx файла
     xlsx_transactions = get_transactions_from_xlsx("../data/transactions_excel.xlsx")
     print(xlsx_transactions.head())
     print(xlsx_transactions.shape)
+  
